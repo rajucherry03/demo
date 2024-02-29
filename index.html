@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tasks</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            padding-top: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .task-container {
+            display: none;
+            border: 2px solid #007bff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            width: 80%;
+            text-align: center;
+        }
+        
+        .active-task {
+            display: block;
+        }
+        
+        .navbar {
+            background-color: #3498db;
+            flex: 1;
+        }
+        
+        .navbar-brand {
+            color: #ffffff;
+        }
+        
+        .navbar-toggler-icon {
+            background-color: #ffffff;
+        }
+        
+        .navbar-nav {
+            flex: 1;
+            justify-content: flex-end;
+        }
+        
+        .nav-item {
+            margin-right: 20px;
+        }
+        
+        .nav-link {
+            color: #ffffff;
+        }
+        
+        .nav-link:hover {
+            color: #ffffff;
+            background-color: #2c3e50;
+            border-radius: 5px;
+        }
+        
+        #text-to-move {
+            position: relative;
+            transition: left 0.5s ease-in-out;
+            margin-bottom: 20px;
+        }
+        
+        .move-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        
+        .move-button {
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+        
+        .move-button:hover {
+            background-color: #34495e;
+        }
+        
+        .move-forward {
+            background-color: #2ecc71;
+            color: #ffffff;
+        }
+        
+        .move-backward {
+            background-color: #e74c3c;
+            color: #ffffff;
+        }
+        
+        .social-icons {
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            margin-right: 20px;
+            font-size: 24px;
+            color: #3498db;
+            transition: color 0.3s ease-in-out;
+        }
+        
+        .social-icons a:hover {
+            color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="#">HTML Tasks</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showTask('youtube-video')">Embed Youtube Video</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showTask('social-media-icons')">Add Social Media Icons</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showTask('email-newsletter')">Create Email Newsletter</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showTask('move-text')">Move Text</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="youtube-video" class="task-container">
+        <h2>Embed Youtube Video</h2>
+
+        <iframe width="100%" height="500px" src="https://www.youtube.com/embed/Cx2dkpBxst8" frameborder="0" allowfullscreen></iframe>
+
+    </div>
+
+    <div id="social-media-icons" class="task-container">
+        <h2>Add Social Media Icons</h2>
+        <div class="social-icons">
+
+            <a href="url" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="url" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="url" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="url" target="_blank"><i class="fab fa-snapchat"></i></a>
+        </div>
+    </div>
+
+    <div id="email-newsletter" class="task-container">
+        <h2>Create Email Newsletter</h2>
+        <div>
+            <h2>Exciting News from Our MITS!</h2>
+            <p>Dear community,</p>
+            <p>We are thrilled to share some exciting updates from our company. Here are the highlights:</p>
+            <ul>
+                <li><strong>New Event Launch:</strong> Introducing our latest innovation that will revolutionize the industry.</li>
+                <li><strong>Upcoming Events:</strong> Don't miss out on our upcoming events and webinars. Stay tuned for more details!</li>
+                <li><strong>Student Spotlight:</strong> We appreciate our students! Read about their success stories and experiences.</li>
+            </ul>
+            <p>Stay connected with us for more updates and exclusive offers. Thank you for being part of our community!</p>
+            <p>Best regards,</p>
+            <p>MITS</p>
+            <a href="news.html" target="_blank">Read more...</a>
+        </div>
+    </div>
+
+
+    <div id="move-text" class="task-container">
+        <h2>Move Text</h2>
+        <div id="text-to-move">This is some text to move.</div>
+        <div class="move-buttons">
+            <button class="move-button move-forward" onclick="moveText('forward')">Move Forward</button>
+            <button class="move-button move-backward" onclick="moveText('backward')">Move Backward</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+
+    <script>
+        function showTask(taskId) {
+            // Hide all tasks
+            document.querySelectorAll('.task-container').forEach(task => {
+                task.classList.remove('active-task');
+            });
+
+            // Show the selected task
+            document.getElementById(taskId).classList.add('active-task');
+        }
+
+        function moveText(direction) {
+            const textToMove = document.getElementById('text-to-move');
+            const currentLeft = parseInt(getComputedStyle(textToMove).left) || 0;
+
+            if (direction === 'forward') {
+                textToMove.style.left = (currentLeft + 50) + 'px';
+            } else if (direction === 'backward') {
+                textToMove.style.left = (currentLeft - 50) + 'px';
+            }
+        }
+    </script>
+
+</body>
+
+</html>
